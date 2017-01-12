@@ -14,14 +14,18 @@ class ContactPostController extends Controller
      */
     public function indexAction($id)
     {
+        // Attempt to send the email and store success flag and error messages
         list($emailSent, $errName, $errEmail, $errMessage) = $this->sendEmail();
 
+        // If the email sent, send the user to a confirmation page
         if ($emailSent) {
             return $this->render('posted.html.twig', [
                 'id' => $id
             ]);
         }
 
+        // If the email failed to send, bring the user back to the contact form
+        // with an error message about the field causing issues
         return $this->redirectToRoute('contact', [
             'id' => $id,
             'errName' => $errName,
@@ -31,6 +35,11 @@ class ContactPostController extends Controller
 
     }
 
+    /**
+     * Function to validate and send an email
+     *
+     * @return array [bool $success, string $errName, string $errEmail, string $errMessage]
+     */
     public function sendEmail()
     {
         if (isset($_POST["submit"])) {
