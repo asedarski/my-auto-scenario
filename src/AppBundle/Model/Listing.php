@@ -30,8 +30,8 @@ class Listing {
         $this->transmissionType = 'Automatic';
         $this->bodyStyle = 'Extended Cab';
         $this->options = [
-            'height' => '16feet',
-            'weight' => '1500lbs'
+            'Height' => '16 feet',
+            'Weight' => '1500 lbs'
         ];
     }
 
