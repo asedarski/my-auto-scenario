@@ -1,0 +1,46 @@
+<h1>Listing Page</h1>
+<ul>
+    <li>
+        {{ testVar }}
+    </li>
+    <li>
+        {{ id }}
+    </li>
+    <li>
+        {{ sellerId }}
+    </li>
+    <li>
+        {{ type }}
+    </li>
+    <li>
+        {{ year }}
+    </li>
+    <li>
+        {{ make }}
+    </li>
+    <li>
+        {{ model }}
+    </li>
+    <li>
+        {{ description }}
+    </li>
+    <li>
+        {{ price }}
+    </li>
+    <li>
+        {{ color }}
+    </li>
+    <li>
+        {{ transmissionType }}
+    </li>
+    <li>
+        {{ bodyStyle }}
+    </li>
+    <ul>
+        {% for key, value in options %}
+        <li>
+            {{ key }}: {{ value }}
+        </li>
+        {% endfor %}
+    </ul>
+</ul>
