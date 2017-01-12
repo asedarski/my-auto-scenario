@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="row">
+    <div class="center-block col-md-4" style="float: none;">
+        <h1 class='text-center'>Thank you for your submission!</h1>
+        <p class='text-center'>The seller will respond to your email soon with details about the motor in question.</p>
+        <p class='text-center'><a class="btn btn-lg btn-success" href="/listings/{{ id }}" role="button">Return to Listing</a></p>
+    </div>
+</div>
+
+{% endblock %}
