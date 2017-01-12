@@ -17,7 +17,19 @@ class HomeController extends Controller
     {
         $listing = new Listing();
         return $this->render('home.html.twig', [
-            'testVar' => $listing->testVar
+            'testVar' => $listing->testVar,
+            'id' => $listing->getId(),
+            'sellerId' => $listing->getSellerId(),
+            'type' => $listing->getType(),
+            'year' => $listing->getYear(),
+            'make' => $listing->getMake(),
+            'model' => $listing->getModel(),
+            'description' => $listing->getDescription(),
+            'price' => $listing->getPrice(),
+            'color' => $listing->getColor(),
+            'transmissionType' => $listing->getTransmissionType(),
+            'bodyStyle' => $listing->getBodyStyle(),
+            'options' => $listing->getOptions()
         ]);
     }
 }
