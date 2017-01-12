@@ -11,14 +11,14 @@ use AppBundle\Model\Listing as Listing;
 class ListingController extends Controller
 {
     /**
-     * @Route("/listing", name="listing")
+     * @Route("/listings/{id}", name="listing")
      */
-    public function indexAction(Request $request)
+    public function indexAction($id)
     {
         $listing = new Listing();
         return $this->render('listing.html.twig', [
             'testVar' => $listing->testVar,
-            'id' => $listing->getId(),
+            'id' => $id,
             'sellerId' => $listing->getSellerId(),
             'type' => $listing->getType(),
             'year' => $listing->getYear(),

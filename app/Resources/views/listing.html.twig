@@ -1,4 +1,6 @@
-{% extends 'base.html.twig' %} {% block body %}
+{% extends 'base.html.twig' %}
+
+{% block body %}
 <div class="container">
     <div class="header clearfix">
         <nav>
@@ -47,6 +49,13 @@
                     {{ key }}: {{ value }}
                 </li>
                 {% endfor %}
+            </ul>
+
+            <h4>Listing Id</h4>
+            <ul>
+                <li>
+                    {{ id }}
+                </li>
             </ul>
         </div>
     </div>
