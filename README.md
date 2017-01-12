@@ -18,4 +18,4 @@ Built with:
 To run locally:
   * run `composer update`
   * run `php bin/console server:run`
-  * Open http://localhost:8000/
+  * Open <http://localhost:8000/>
