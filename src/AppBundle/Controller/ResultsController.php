@@ -15,7 +15,27 @@ class ResultsController extends Controller
      */
     public function indexAction(Request $request)
     {
+        $listings = $this->getDoctrine()
+            ->getRepository('AppBundle:Listing')
+            ->findAll();
+
+        $listingsToDisplay = [];
+        $index = 0;
+
+        foreach ($listings as $entity) {
+            $listingsToDisplay[$index] = [
+                'id' => $entity->getId(),
+                'year' => $entity->getYear(),
+                'make' => $entity->getMake(),
+                'model' => $entity->getModel(),
+                'description' => $entity->getDescription()
+            ];
+
+            $index += 1;
+        }
+
         return $this->render('results.html.twig', [
+            'listings' => $listingsToDisplay
         ]);
     }
 }
