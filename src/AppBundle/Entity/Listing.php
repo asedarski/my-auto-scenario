@@ -18,6 +18,14 @@ class Listing
     private $id;
 
     /**
+     * @ORM\ManyToOne(
+     *     targetEntity="Seller"
+     * )
+     * @ORM\JoinColumn(name="seller_id", referencedColumnName="id", nullable=false)
+     */
+    private $sellerId;
+
+    /**
      * @ORM\Column(type="string", length=100)
      */
     private $name;
@@ -344,5 +352,29 @@ class Listing
     public function getOptions()
     {
         return $this->options;
+    }
+
+    /**
+     * Set sellerId
+     *
+     * @param \AppBundle\Entity\Seller $sellerId
+     *
+     * @return Listing
+     */
+    public function setSellerId(\AppBundle\Entity\Seller $sellerId = null)
+    {
+        $this->sellerId = $sellerId;
+
+        return $this;
+    }
+
+    /**
+     * Get sellerId
+     *
+     * @return \AppBundle\Entity\Seller
+     */
+    public function getSellerId()
+    {
+        return $this->sellerId;
     }
 }
