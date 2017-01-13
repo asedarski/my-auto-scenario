@@ -24,6 +24,10 @@ To run locally:
 
 To update the database after making changes to Entity files:
   * run `php bin/console doctrine:generate:entities AppBundle`
+    - Generates getters and setters for all of the AppBundle Entities
   * run `php bin/console doctrine:schema:update --force`
-  * run `php bin/console doctrine:schema:validate` to verify database is up to date
-  * NOTE: run `php bin/console doctrine:schema:update --dump-sql` to see differences between schema and Entity
+    - Updates the database with the defined Entity schemas
+  * run `php bin/console doctrine:schema:validate`
+    - Verifies database is up to date
+  * NOTE: run `php bin/console doctrine:schema:update --dump-sql`
+    - Shows the differences between the database and the Entity
