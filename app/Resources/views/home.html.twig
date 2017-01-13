@@ -1,1 +1,16 @@
-<h1>Home Page</h1>
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+    <div class="header clearfix text-center">
+        <h1 class="text-muted">Alicia's Motor Sales</h1>
+      </div>
+
+    <!-- Jumbotron -->
+    <div class="jumbotron">
+        <h2 class='text-center'>Find Your Next Car, Boat, Truck, RV or Other Motor Today!</h2>
+        <p class='text-center'><a class="btn btn-lg btn-success" href="/listings" role="button">Start Searching!</a></p>
+    </div>
+</div>
+
+{% endblock %}
