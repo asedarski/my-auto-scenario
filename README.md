@@ -34,6 +34,7 @@ To update the database after making changes to Entity files:
     - Shows the differences between the database and the Entity
 
 Why I chose these technologies:
+-------------------------------
   * Symfony
     - Symfony is an easy framework to get going on. It has the capabilites to route requests with ease.  
       It readily supports an MVC framework pattern. Symfony creates a strong backbone for a project.
