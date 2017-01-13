@@ -2,11 +2,21 @@
 
 {% block body %}
 
-<div class="row">
-    <div class="center-block col-md-4" style="float: none;">
-        <h1 class='text-center'>Thank you for your submission!</h1>
-        <p class='text-center'>The seller will respond to your email soon with details about the motor in question.</p>
-        <p class='text-center'><a class="btn btn-lg btn-success" href="/listings/{{ id }}" role="button">Return to Listing</a></p>
+<div class="container">
+    <div class="header clearfix">
+        <nav>
+            <ul class="nav nav-pills pull-right">
+                <li role="presentation" class="active"><a href="/">Home</a></li>
+            </ul>
+        </nav>
+        <h3 class="text-muted">Alicia's Motor Sales</h3>
+    </div>
+
+    <div class="row">
+        <div class="center-block col-md-4" style="float: none;">
+            <h1 class='text-center'>Thank you for your submission!</h1>
+            <p class='text-center'>The seller will respond to your email soon with details about the motor in question.</p>
+        </div>
     </div>
 </div>
 

@@ -21,7 +21,7 @@ class Listing
      * @ORM\ManyToOne(
      *     targetEntity="Seller"
      * )
-     * @ORM\JoinColumn(name="seller_id", referencedColumnName="id", nullable=false)
+     * @ORM\JoinColumn(name="seller_id", referencedColumnName="id")
      */
     private $sellerId;
 

@@ -15,7 +15,8 @@
         <h1>{{ year }} {{ make }} {{ model }}</h1>
         <p class="lead">{{ description }}</p>
         <p class="price">${{ price }}</p>
-        <p><a class="btn btn-lg btn-success" href="/contact/{{ id }}" role="button">Contact Seller</a></p>
+        <p class="seller"><a href="/seller/{{ sellerId }}">Seller Page</a></p>
+        <p><a class="btn btn-lg btn-success" href="/contact/{{ sellerId }}" role="button">Contact Seller</a></p>
     </div>
 
     <div class="row marketing">
@@ -25,31 +26,37 @@
                 <li>{{ type }}</li>
             </ul>
 
-            <h4>Color</h4>
-            <ul>
-                <li>{{ color }}</li>
-            </ul>
+            {% if color %}
+                <h4>Color</h4>
+                <ul>
+                    <li>{{ color }}</li>
+                </ul>
 
-            <h4>Transmission Type</h4>
-            <ul>
-                <li>{{ transmissionType }}</li>
-            </ul>
+                <h4>Transmission Type</h4>
+                <ul>
+                    <li>{{ transmissionType }}</li>
+                </ul>
+            {% endif %}
         </div>
 
         <div class="col-lg-6">
-            <h4>Body Style</h4>
-            <ul>
-                <li>{{ bodyStyle }}</li>
-            </ul>
+            {% if bodyStyle %}
+                <h4>Body Style</h4>
+                <ul>
+                    <li>{{ bodyStyle }}</li>
+                </ul>
+            {% endif %}
 
-            <h4>Options</h4>
-            <ul>
-                {% for key, value in options %}
-                <li>
-                    {{ key }}: {{ value }}
-                </li>
-                {% endfor %}
-            </ul>
+            {% if options %}
+                <h4>Options</h4>
+                <ul>
+                    {% for key, value in options %}
+                    <li>
+                        {{ key }}: {{ value }}
+                    </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
 
             <h4>Listing Id</h4>
             <ul>

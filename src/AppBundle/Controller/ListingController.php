@@ -15,11 +15,19 @@ class ListingController extends Controller
      */
     public function indexAction($id)
     {
-        $listing = new Listing();
+        $listing = $this->getDoctrine()
+            ->getRepository('AppBundle:Listing')
+            ->find($id);
+
+        if (!$listing) {
+            throw $this->createNotFoundException(
+                'No listing found for id '.$id
+            );
+        }
+
         return $this->render('listing.html.twig', [
-            'testVar' => $listing->testVar,
-            'id' => $id,
-            'sellerId' => $listing->getSellerId(),
+            'id' => $listing->getId(),
+            'sellerId' => $listing->getSellerId()->getId(),
             'type' => $listing->getType(),
             'year' => $listing->getYear(),
             'make' => $listing->getMake(),

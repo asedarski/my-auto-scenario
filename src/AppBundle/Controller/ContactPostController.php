@@ -10,24 +10,34 @@ use Symfony\Component\HttpFoundation\Response;
 class ContactPostController extends Controller
 {
     /**
-     * @Route("/contact/post/{id}", name="contactPost")
+     * @Route("/contact/post/{sellerId}", name="contactPost")
      */
-    public function indexAction($id)
+    public function indexAction($sellerId)
     {
+        $seller = $this->getDoctrine()
+            ->getRepository('AppBundle:Seller')
+            ->find($sellerId);
+
+        if (!$seller) {
+            throw $this->createNotFoundException(
+                'No seller found for id '.$sellerId
+            );
+        }
+
         // Attempt to send the email and store success flag and error messages
-        list($emailSent, $errName, $errEmail, $errMessage) = $this->sendEmail();
+        list($emailSent, $errName, $errEmail, $errMessage) = $this->sendEmail($seller);
 
         // If the email sent, send the user to a confirmation page
         if ($emailSent) {
             return $this->render('posted.html.twig', [
-                'id' => $id
+                'id' => $sellerId
             ]);
         }
 
         // If the email failed to send, bring the user back to the contact form
         // with an error message about the field causing issues
         return $this->redirectToRoute('contact', [
-            'id' => $id,
+            'id' => $sellerId,
             'errName' => $errName,
             'errEmail' => $errEmail,
             'errMessage' => $errMessage
@@ -40,14 +50,14 @@ class ContactPostController extends Controller
      *
      * @return array [bool $success, string $errName, string $errEmail, string $errMessage]
      */
-    public function sendEmail()
+    public function sendEmail($seller)
     {
         if (isset($_POST["submit"])) {
             $name = $_POST['name'];
             $email = $_POST['email'];
             $message = $_POST['message'];
             $from = $email; 
-            $to = "alicia.sedarski@dominionenterprises.com"; 
+            $to = $seller->getEmail();
             $subject = "Message from Alicia's Motor Sales ";
 
             $body = "From: $name\n E-Mail: $email\n Message:\n $message";

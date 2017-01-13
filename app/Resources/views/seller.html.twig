@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+    <div class="header clearfix">
+        <nav>
+            <ul class="nav nav-pills pull-right">
+                <li role="presentation" class="active"><a href="/">Home</a></li>
+            </ul>
+        </nav>
+        <h3 class="text-muted">Alicia's Motor Sales</h3>
+    </div>
+
+    <div class="jumbotron">
+        <h1>{{ name }}</h1>
+        <p class="type">{{ type }}</p>
+        <p class="address">{{ street }}</p>
+        <p class="address">{{ city }}, {{ state }} {{ zip }}</p>
+        <p class="phone">{{ phoneNumber }}
+        <p class="email">{{ email }}</p>
+        <p class="website"><a href="{{ website }}">Seller Website</a></p>
+        <p><a class="btn btn-lg btn-success" href="/contact/{{ id }}" role="button">Contact Seller</a></p>
+    </div>
+</div>
+{% endblock %}
