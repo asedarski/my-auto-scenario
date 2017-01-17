@@ -18,7 +18,7 @@ Built with:
   * mySQL
   * TWIG
 
-To run locally:
+### To run locally:
   * clone this repository
   * in the root of this directory, run `composer update`
   * run `npm install`
@@ -38,7 +38,7 @@ To run locally:
   * run `php bin/console server:run` to run the server for the site
   * open <http://localhost:8000/>
 
-To update the database after making changes to Entity files:
+### To update the database after making changes to Entity files:
   * run `php bin/console doctrine:generate:entities AppBundle`
     - Generates getters and setters for all of the AppBundle Entities
   * run `php bin/console doctrine:schema:update --force`
@@ -48,7 +48,7 @@ To update the database after making changes to Entity files:
   * NOTE: run `php bin/console doctrine:schema:update --dump-sql`
     - Shows the differences between the database and the Entity
 
-To add rows to the database:
+### To add rows to the database:
   * login to mySQL by `mysql -u phpmyadmin -p` and enter your password
   * enter `USE symfony;`
   * enter `SHOW tables;` to display all available tables
