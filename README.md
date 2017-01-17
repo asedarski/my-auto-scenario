@@ -19,9 +19,23 @@ Built with:
   * TWIG
 
 To run locally:
-  * run `composer update`
-  * run `php bin/console server:run`
-  * Open <http://localhost:8000/>
+  * clone this repository
+  * in the root of this directory, run `composer update`
+  * run `npm install`
+  * install mySQL
+    - `sudo apt-get install mysql-server`
+    - set a root password for mysql
+    - follow steps 1 and 2 in this tutorial to setup the phpmyadmin user  
+      <http://askubuntu.com/questions/763336/cannot-enter-phpmyadmin-as-root-mysql-5-7/763359#763359>
+  * setup `app/config/parameters.yml`
+    - Use all of the defaults except database_name, database_user, and database_password  
+    - database_name: symfony
+    - database_user and database_password will be based on the local developers setup
+  * run `php bin/console doctrine:database:create` to create the symfony database
+  * run `php bin/console doctrine:generate:entities AppBundle` to ensure the schemas are up to date
+  * run `php bin/console doctrine:schema:update --force` to create the empty tables
+  * run `php bin/console server:run` to run the server for the site
+  * open <http://localhost:8000/>
 
 To update the database after making changes to Entity files:
   * run `php bin/console doctrine:generate:entities AppBundle`
@@ -32,6 +46,12 @@ To update the database after making changes to Entity files:
     - Verifies database is up to date
   * NOTE: run `php bin/console doctrine:schema:update --dump-sql`
     - Shows the differences between the database and the Entity
+
+To add rows to the database:
+  * login to `mysql`
+  * enter `use symfony;`
+  * enter `show tables;` to display all available tables
+  * Create a Seller first
 
 Why I chose these technologies:
 -------------------------------
