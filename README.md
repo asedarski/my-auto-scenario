@@ -48,10 +48,22 @@ To update the database after making changes to Entity files:
     - Shows the differences between the database and the Entity
 
 To add rows to the database:
-  * login to `mysql`
-  * enter `use symfony;`
-  * enter `show tables;` to display all available tables
-  * Create a Seller first
+  * login to mySQL by `mysql -u phpmyadmin -p` and enter your password
+  * enter `USE symfony;`
+  * enter `SHOW tables;` to display all available tables
+  * Create a Seller first (replace all values in the statement below)
+    ```
+    INSERT INTO seller SET type='TYPE', name='NAME', street='STREET', city='CITY', state='STATE', zip=ZIP, 
+    phone_number='PHONE', email='EMAIL', website='WEBSITE';
+    ```
+  * enter `SELECT * FROM seller;` to show the seller table with rows, make note of the seller_id
+  * Create a Listing (replace all values in the statement below, with the SELLER as the id you noted in the last step)
+    ```
+    INSERT INTO listing SET name='NAME', price='PRICE', description='DESCRIPTION', 
+    type='TYPE', year=YEAR, make='MAKE', model='MODEL', color='COLOR', transmission_type='TRANSMISSON', body_style='BODY', seller_id=SELLER;
+    ```
+  * enter `SELECT * FROM listing;` to show the listing table with rows
+
 
 Why I chose these technologies:
 -------------------------------
