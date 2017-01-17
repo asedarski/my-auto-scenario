@@ -22,6 +22,7 @@ To run locally:
   * clone this repository
   * in the root of this directory, run `composer update`
   * run `npm install`
+  * install PHP SendMail `sudo apt-get install sendmail`
   * install mySQL
     - `sudo apt-get install mysql-server`
     - set a root password for mysql
