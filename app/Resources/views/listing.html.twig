@@ -13,11 +13,7 @@
 
     <div class="jumbotron">
         <h1>{{ year }} {{ make }} {{ model }}</h1>
-        {% set src = 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRGKq6w-seqKAJfQ8-_ngZ5r_teUTnsm6RzhnY409upplVstd2oLCWHTA' %}
-        {% if imgUrl %}
-            {% set src = imgUrl %}
-        {% endif %}
-        <img src="{{ src }}" height='400px'>
+        <img src="{{ imgUrl }}" height='400px'>
         <p class="lead">{{ description }}</p>
         <p class="price">${{ price }}</p>
         <p class="seller"><a href="/seller/{{ sellerId }}">Seller Page</a></p>

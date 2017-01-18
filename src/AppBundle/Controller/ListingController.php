@@ -25,6 +25,11 @@ class ListingController extends Controller
             );
         }
 
+        $imgUrl = 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRGKq6w-seqKAJfQ8-_ngZ5r_teUTnsm6RzhnY409upplVstd2oLCWHTA';
+        if ($listing->getImgUrl()) {
+            $imgUrl = $listing->getImgUrl();
+        }
+
         return $this->render('listing.html.twig', [
             'id' => $listing->getId(),
             'sellerId' => $listing->getSellerId()->getId(),
@@ -38,7 +43,7 @@ class ListingController extends Controller
             'transmissionType' => $listing->getTransmissionType(),
             'bodyStyle' => $listing->getBodyStyle(),
             'options' => $listing->getOptions(),
-            'imgUrl' => $listing->getImgUrl()
+            'imgUrl' => $imgUrl
         ]);
     }
 }

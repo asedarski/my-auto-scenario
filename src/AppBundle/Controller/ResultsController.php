@@ -23,13 +23,17 @@ class ResultsController extends Controller
         $index = 0;
 
         foreach ($listings as $entity) {
+            $imgUrl = 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRGKq6w-seqKAJfQ8-_ngZ5r_teUTnsm6RzhnY409upplVstd2oLCWHTA';
+            if ($entity->getImgUrl()) {
+                $imgUrl = $entity->getImgUrl();
+            }
             $listingsToDisplay[$index] = [
                 'id' => $entity->getId(),
                 'year' => $entity->getYear(),
                 'make' => $entity->getMake(),
                 'model' => $entity->getModel(),
                 'description' => $entity->getDescription(),
-                'imgUrl' => $entity->getImgUrl()
+                'imgUrl' => $imgUrl
             ];
 
             $index += 1;
