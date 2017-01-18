@@ -28,7 +28,8 @@ class ResultsController extends Controller
                 'year' => $entity->getYear(),
                 'make' => $entity->getMake(),
                 'model' => $entity->getModel(),
-                'description' => $entity->getDescription()
+                'description' => $entity->getDescription(),
+                'imgUrl' => $entity->getImgUrl()
             ];
 
             $index += 1;

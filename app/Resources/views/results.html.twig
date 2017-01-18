@@ -29,6 +29,11 @@
 
         <div class="col-lg-4">
             <h2>{{ listing['year'] }} {{ listing['make'] }} {{ listing['model'] }}</h2>
+            {% set src = 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRGKq6w-seqKAJfQ8-_ngZ5r_teUTnsm6RzhnY409upplVstd2oLCWHTA' %}
+            {% if listing['imgUrl'] %}
+                {% set src = listing['imgUrl'] %}
+            {% endif %}
+            <img src="{{ src }}" height='200px'>
             <p>{{ listing['description'] }}</p>
             <p><a class="btn btn-primary" href="/listings/{{ listing['id'] }}" role="button">View details &raquo;</a></p>
         </div>

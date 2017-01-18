@@ -21,7 +21,7 @@ class Listing
      * @ORM\ManyToOne(
      *     targetEntity="Seller"
      * )
-     * @ORM\JoinColumn(name="seller_id", referencedColumnName="id", nullable=false)
+     * @ORM\JoinColumn(name="seller_id", referencedColumnName="id")
      */
     private $sellerId;
 
@@ -79,6 +79,11 @@ class Listing
      * @ORM\Column(type="array", nullable=true)
      */
     private $options;
+
+    /**
+     * @ORM\Column(type="text", length=3000, nullable=true)
+     */
+    private $imgUrl;
 
     /**
      * Get id

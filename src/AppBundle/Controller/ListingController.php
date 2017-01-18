@@ -37,7 +37,8 @@ class ListingController extends Controller
             'color' => $listing->getColor(),
             'transmissionType' => $listing->getTransmissionType(),
             'bodyStyle' => $listing->getBodyStyle(),
-            'options' => $listing->getOptions()
+            'options' => $listing->getOptions(),
+            'imgUrl' => $listing->getImgUrl()
         ]);
     }
 }

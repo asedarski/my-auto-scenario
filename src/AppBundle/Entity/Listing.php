@@ -81,6 +81,11 @@ class Listing
     private $options;
 
     /**
+     * @ORM\Column(type="text", length=3000, nullable=true)
+     */
+    private $imgUrl;
+
+    /**
      * Get id
      *
      * @return integer
@@ -376,5 +381,29 @@ class Listing
     public function getSellerId()
     {
         return $this->sellerId;
+    }
+
+    /**
+     * Set imgUrl
+     *
+     * @param string $imgUrl
+     *
+     * @return Listing
+     */
+    public function setImgUrl($imgUrl)
+    {
+        $this->imgUrl = $imgUrl;
+
+        return $this;
+    }
+
+    /**
+     * Get imgUrl
+     *
+     * @return string
+     */
+    public function getImgUrl()
+    {
+        return $this->imgUrl;
     }
 }
