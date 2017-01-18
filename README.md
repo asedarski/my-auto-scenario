@@ -61,7 +61,7 @@ Built with:
   * Create a Listing (replace all values in the statement below, with the SELLER as the id you noted in the last step)
     ```
     INSERT INTO listing SET name='NAME', price='PRICE', description='DESCRIPTION', 
-    type='TYPE', year=YEAR, make='MAKE', model='MODEL', color='COLOR', transmission_type='TRANSMISSON', body_style='BODY', seller_id=SELLER;
+    type='TYPE', year=YEAR, make='MAKE', model='MODEL', color='COLOR', transmission_type='TRANSMISSION', body_style='BODY', seller_id=SELLER;
     ```
   * enter `SELECT * FROM listing;` to show the listing table with rows
 
